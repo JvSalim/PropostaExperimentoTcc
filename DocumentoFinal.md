@@ -11,7 +11,8 @@ EXP-IA-US-TESTES-2025
 ## 1.3 Versão do documento e histórico de revisão
 
 Versão atual do documento: v1.0.  
-Histórico de revisão: v1.0 – elaboração inicial do plano de experimento para o TCC.
+Histórico de revisão: 
+v1.0 – elaboração inicial do plano de experimento para o TCC.
 
 ## 1.4 Datas (criação, última atualização)
 
@@ -20,7 +21,7 @@ Data da última atualização desta versão: 23/11/2025.
 
 ## 1.5 Autores (nome, área, contato)
 
-Autor: João Victor Salim Ribeiro Guimarães Trad (João Victor Salim).  
+Autor: João Victor Salim Ribeiro Guimarães Trad.  
 Área: Engenharia de Software.  
 Vínculo: Estudante do sexto período de Engenharia de Software na Pontifícia Universidade Católica de Minas Gerais (PUC Minas).  
 Contato: joao.trad@sga.pucminas.br

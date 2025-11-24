@@ -354,6 +354,8 @@ Finalmente, alterações significativas no calendário acadêmico ou na disponib
 Ao explicitar esses critérios de parada antecipada, o plano de experimento mostra maturidade e responsabilidade, o que é fundamental em um trabalho de conclusão de curso. Ao mesmo tempo, o desenho escolhido permanece simples o bastante para ser conduzido por um único estudante, com alcance compatível com a realidade do curso, mas robusto o suficiente para produzir resultados analisáveis e úteis sobre o uso de inteligência artificial em atividades de entendimento de user stories e geração de testes automatizados.
 # 7. Modelo conceitual e hipóteses
 
+---
+
 ## 7.1 Modelo conceitual do experimento
 
 O modelo conceitual deste experimento parte da ideia de que o uso de ferramentas de inteligência artificial em tarefas de entendimento de user stories e geração de testes automatizados atua como um fator que pode modificar o comportamento dos estudantes e os resultados obtidos em diferentes dimensões. Em termos conceituais, o principal fator estudado é o uso de IA, com dois níveis: ausência de uso de IA (condição controle) e uso de uma ferramenta de IA aprovada (condição tratamento). Esse fator é aplicado sobre tarefas equivalentes, nas quais os participantes recebem user stories, critérios de aceitação e um sistema sob teste com defeitos semeados.
@@ -368,41 +370,45 @@ Em resumo, o modelo conceitual considera que:
 2. A tarefa e a experiência prévia dos participantes podem moderar esses efeitos, isto é, estudantes mais experientes podem depender menos da IA, enquanto estudantes menos experientes podem se beneficiar mais ou se tornar mais dependentes.
 3. As percepções subjetivas dos estudantes (utilidade, confiança, dependência) são influenciadas pela interação entre o uso de IA, a tarefa executada e os resultados objetivos obtidos (por exemplo, detecção de defeitos).
 
+---
+
 ## 7.2 Hipóteses formais (H0, H1)
 
 Com base no modelo conceitual e nas questões de pesquisa definidas anteriormente, são formuladas hipóteses nulas e alternativas para os principais efeitos de interesse. Abaixo, as hipóteses são descritas em linguagem textual clara, associadas às métricas já definidas.
 
-Hipótese relacionada ao entendimento de user stories:
+**Hipótese relacionada ao entendimento de user stories**
 
-H0_Entendimento: não há diferença significativa entre a pontuação média de entendimento da user story (métrica M1) dos estudantes quando executam a tarefa sem uso de IA e quando executam a tarefa com uso de IA.
+**H0_Entendimento**: não há diferença significativa entre a pontuação média de entendimento da user story (métrica M1) dos estudantes quando executam a tarefa sem uso de IA e quando executam a tarefa com uso de IA.
 
-H1_Entendimento: a pontuação média de entendimento da user story (métrica M1) dos estudantes é maior na condição com uso de IA do que na condição sem uso de IA.
+**H1_Entendimento**: a pontuação média de entendimento da user story (métrica M1) dos estudantes é maior na condição com uso de IA do que na condição sem uso de IA.
 
-Hipótese relacionada à cobertura de código pelos testes:
+**Hipótese relacionada à cobertura de código pelos testes**
 
-H0_Cobertura: não há diferença significativa entre a cobertura média de código por linha e por ramo (métricas M4 e M5) obtida pelos testes automatizados gerados pelos estudantes nas condições com e sem uso de IA.
+**H0_Cobertura**: não há diferença significativa entre a cobertura média de código por linha e por ramo (métricas M4 e M5) obtida pelos testes automatizados gerados pelos estudantes nas condições com e sem uso de IA.
 
-H1_Cobertura: a cobertura média de código por linha e por ramo (métricas M4 e M5) obtida pelos testes automatizados é maior na condição com uso de IA do que na condição sem uso de IA.
+**H1_Cobertura**: a cobertura média de código por linha e por ramo (métricas M4 e M5) obtida pelos testes automatizados é maior na condição com uso de IA do que na condição sem uso de IA.
 
-Hipótese relacionada à detecção de defeitos semeados:
+**Hipótese relacionada à detecção de defeitos semeados**
 
-H0_Defeitos: não há diferença significativa entre a taxa média de detecção de defeitos semeados (métrica M8) entre a condição sem uso de IA e a condição com uso de IA.
+**H0_Defeitos**: não há diferença significativa entre a taxa média de detecção de defeitos semeados (métrica M8) entre a condição sem uso de IA e a condição com uso de IA.
 
-H1_Defeitos: a taxa média de detecção de defeitos semeados (métrica M8) é maior na condição com uso de IA do que na condição sem uso de IA.
+**H1_Defeitos**: a taxa média de detecção de defeitos semeados (métrica M8) é maior na condição com uso de IA do que na condição sem uso de IA.
 
-Hipótese relacionada ao esforço e ao tempo:
+**Hipótese relacionada ao esforço e ao tempo**
 
-H0_EsforçoTempo: não há diferença significativa entre o tempo médio de execução da tarefa (M9) e o esforço percebido (M12) nas condições com e sem uso de IA.
+**H0_EsforçoTempo**: não há diferença significativa entre o tempo médio de execução da tarefa (M9) e o esforço percebido (M12) nas condições com e sem uso de IA.
 
-H1_EsforçoTempo: o uso de IA reduz o tempo médio de execução da tarefa (M9) e o esforço percebido (M12) em comparação com a condição sem uso de IA.
+**H1_EsforçoTempo**: o uso de IA reduz o tempo médio de execução da tarefa (M9) e o esforço percebido (M12) em comparação com a condição sem uso de IA.
 
-Hipótese relacionada à percepção de utilidade e dependência:
+**Hipótese relacionada à percepção de utilidade e dependência**
 
-H0_Percepção: o uso de IA não altera significativamente a percepção de utilidade (M16), confiança (M13) e dependência (M15) dos estudantes em relação à tarefa de entender user stories e gerar testes automatizados.
+**H0_Percepção**: o uso de IA não altera significativamente a percepção de utilidade (M16), confiança (M13) e dependência (M15) dos estudantes em relação à tarefa de entender user stories e gerar testes automatizados.
 
-H1_Percepção: o uso de IA aumenta a percepção de utilidade (M16) e confiança (M13) dos estudantes em relação à tarefa, e também pode aumentar a sensação de dependência (M15) em relação à ferramenta, em comparação com a condição sem uso de IA.
+**H1_Percepção**: o uso de IA aumenta a percepção de utilidade (M16) e confiança (M13) dos estudantes em relação à tarefa, e também pode aumentar a sensação de dependência (M15) em relação à ferramenta, em comparação com a condição sem uso de IA.
 
 Essas hipóteses formais permitirão que os dados coletados sejam analisados com métodos estatísticos adequados, testando a presença ou ausência de diferenças significativas entre as condições experimentais.
+
+---
 
 ## 7.3 Nível de significância e considerações de poder
 
@@ -428,146 +434,141 @@ Os objetos de estudo deste experimento são:
 
 Esses objetos são manipulados e analisados com o objetivo de avaliar como o uso de IA impacta o processo de teste orientado por user stories.
 
+---
+
 ## 8.2 Sujeitos / participantes (visão geral)
 
 Os sujeitos do experimento serão estudantes de Engenharia de Software da PUC Minas, preferencialmente entre o terceiro e o sexto período, que já tenham cursado ao menos uma disciplina de programação e tenham tido contato introdutório com conceitos de testes de software. Os participantes atuarão individualmente nas tarefas experimentais, de forma voluntária, após receberem explicações sobre o objetivo do estudo e sobre as atividades a serem realizadas.
 
 Um breve questionário de caracterização será aplicado para registrar informações como período cursado, experiência prévia em desenvolvimento de software, experiência com testes automatizados e nível de familiaridade com ferramentas de inteligência artificial na programação. Essas informações serão utilizadas como variáveis de contexto e possíveis variáveis de bloqueio ou controle.
 
+---
+
 ## 8.3 Variáveis independentes (fatores) e seus níveis
 
 O principal fator de interesse no experimento é o uso de IA. Além dele, considera-se a tarefa específica como fator contextual e potencial fator de bloqueio.
 
-Fator uso de IA:
+**Fator uso de IA**
 
-Nível 1: Sem IA. O participante executa a tarefa de leitura da user story, definição de casos de teste em linguagem natural e implementação de testes automatizados sem utilizar qualquer ferramenta de IA para apoio direto.
+- **Nível 1: Sem IA.** O participante executa a tarefa de leitura da user story, definição de casos de teste em linguagem natural e implementação de testes automatizados sem utilizar qualquer ferramenta de IA para apoio direto.
+- **Nível 2: Com IA.** O participante executa a mesma sequência de atividades (leitura, definição e implementação de testes), mas pode utilizar uma ferramenta de IA aprovada, por exemplo um modelo de linguagem acessível via navegador, para apoiar entendimento, derivação de casos de teste e escrita de código de teste.
 
-Nível 2: Com IA. O participante executa a mesma sequência de atividades (leitura, definição e implementação de testes), mas pode utilizar uma ferramenta de IA aprovada, por exemplo um modelo de linguagem acessível via navegador, para apoiar entendimento, derivação de casos de teste e escrita de código de teste.
+**Fator tarefa**
 
-Fator tarefa:
-
-Nível 1: Tarefa A. Conjunto específico de user story e módulo do sistema sob teste associados, com complexidade moderada e domínio funcional definido.
-
-Nível 2: Tarefa B. Outro conjunto de user story e módulo do sistema sob teste, também com complexidade comparável e domínio funcional similar, mas com variações suficientes para evitar mero reaproveitamento literal de soluções.
+- **Nível 1: Tarefa A.** Conjunto específico de user story e módulo do sistema sob teste associados, com complexidade moderada e domínio funcional definido.
+- **Nível 2: Tarefa B.** Outro conjunto de user story e módulo do sistema sob teste, também com complexidade comparável e domínio funcional similar, mas com variações suficientes para evitar mero reaproveitamento literal de soluções.
 
 A combinação destes fatores configura um desenho aproximado de dois por dois, em que as condições principais de interesse são “com IA” e “sem IA”, e a tarefa serve como contexto e base para contrabalançar o efeito de ordem.
+
+---
 
 ## 8.4 Tratamentos (condições experimentais)
 
 As condições experimentais podem ser descritas em termos de tratamentos, definidos a partir da combinação entre o fator uso de IA e o fator tarefa. Em termos conceituais, existem duas condições principais:
 
-Tratamento controle: Sem IA. O estudante executa a tarefa designada sem acesso à ferramenta de IA para apoio à compreensão ou à geração de testes.
-
-Tratamento com IA: Com IA. O estudante executa a tarefa designada com acesso à ferramenta de IA, podendo utilizá-la para esclarecer dúvidas sobre a user story, sugerir casos de teste e auxiliar na escrita de testes automatizados.
+- **Tratamento controle: Sem IA.** O estudante executa a tarefa designada sem acesso à ferramenta de IA para apoio à compreensão ou à geração de testes.
+- **Tratamento com IA: Com IA.** O estudante executa a tarefa designada com acesso à ferramenta de IA, podendo utilizá-la para esclarecer dúvidas sobre a user story, sugerir casos de teste e auxiliar na escrita de testes automatizados.
 
 Para organizar melhor essas condições em relação às tarefas, a tabela a seguir apresenta os fatores, seus tratamentos (níveis) e as combinações possíveis.
 
 ### Tabela de fatores, níveis e combinações de tratamento
 
-| Combinação | Fator uso de IA | Fator tarefa | Descrição da condição                                                |
-|-----------|------------------|-------------|------------------------------------------------------------------------|
-| C1        | Sem IA           | Tarefa A    | Estudante executa Tarefa A sem uso de IA                              |
-| C2        | Sem IA           | Tarefa B    | Estudante executa Tarefa B sem uso de IA                              |
-| C3        | Com IA           | Tarefa A    | Estudante executa Tarefa A com uso de IA                              |
-| C4        | Com IA           | Tarefa B    | Estudante executa Tarefa B com uso de IA                              |
+| Combinação | Fator uso de IA | Fator tarefa | Descrição da condição                                   |
+|-----------|------------------|-------------|---------------------------------------------------------|
+| C1        | Sem IA           | Tarefa A    | Estudante executa Tarefa A sem uso de IA               |
+| C2        | Sem IA           | Tarefa B    | Estudante executa Tarefa B sem uso de IA               |
+| C3        | Com IA           | Tarefa A    | Estudante executa Tarefa A com uso de IA               |
+| C4        | Com IA           | Tarefa B    | Estudante executa Tarefa B com uso de IA               |
 
 Na prática do desenho escolhido, cada estudante deverá executar duas condições, por exemplo C1 e C4 ou C2 e C3, de forma que cada participante vivencie uma condição com IA e uma condição sem IA, em tarefas distintas. A distribuição das combinações entre os estudantes será planejada para que, no conjunto da amostra, as quatro combinações sejam representadas de maneira balanceada.
+
+---
 
 ## 8.5 Variáveis dependentes (respostas)
 
 As variáveis dependentes são as medidas de resultado que refletem o desempenho dos estudantes e os efeitos do uso de IA. Elas estão diretamente associadas às métricas definidas na seção de GQM. Em síntese:
 
-Variáveis de entendimento de requisitos:
+**Variáveis de entendimento de requisitos**
 
-Pontuação de entendimento da user story, medida pelo questionário objetivo (M1).
+- Pontuação de entendimento da user story, medida pelo questionário objetivo (M1).
+- Proporção de critérios de aceitação corretamente identificados em linguagem natural (M2).
+- Número de erros de interpretação relevantes nas descrições de casos de teste (M3).
 
-Proporção de critérios de aceitação corretamente identificados em linguagem natural (M2).
+**Variáveis de qualidade dos testes**
 
-Número de erros de interpretação relevantes nas descrições de casos de teste (M3).
+- Cobertura de código por linha (M4).
+- Cobertura de código por ramo (M5).
+- Proporção de critérios de aceitação cobertos por testes automatizados (M6).
+- Número de defeitos semeados detectados (M7) e taxa de detecção de defeitos (M8).
 
-Variáveis de qualidade dos testes:
+**Variáveis de esforço e produtividade**
 
-Cobertura de código por linha (M4).
+- Tempo total de tarefa (M9).
+- Número de testes implementados (M10) e produtividade em testes por hora (M11).
+- Esforço percebido (M12).
 
-Cobertura de código por ramo (M5).
+**Variáveis de percepção e aceitação**
 
-Proporção de critérios de aceitação cobertos por testes automatizados (M6).
+- Confiança nos testes produzidos (M13).
+- Frequência de uso da IA durante a tarefa (M14).
+- Dependência percebida em relação à IA (M15).
+- Utilidade percebida da IA para entender a user story (M16).
 
-Número de defeitos semeados detectados (M7) e taxa de detecção de defeitos (M8).
-
-Variáveis de esforço e produtividade:
-
-Tempo total de tarefa (M9).
-
-Número de testes implementados (M10) e produtividade em testes por hora (M11).
-
-Esforço percebido (M12).
-
-Variáveis de percepção e aceitação:
-
-Confiança nos testes produzidos (M13).
-
-Frequência de uso da IA durante a tarefa (M14).
-
-Dependência percebida em relação à IA (M15).
-
-Utilidade percebida da IA para entender a user story (M16).
+---
 
 ## 8.6 Variáveis de controle e de bloqueio
 
 Alguns fatores não são o foco direto de estudo, mas podem influenciar os resultados se não forem considerados. Eles serão tratados como variáveis de controle ou de bloqueio.
 
-Experiência prévia em programação: tempo de estudo em programação e prática em projetos, medidos por questionário de perfil. Podem ser usados para agrupar participantes em faixas de experiência.
-
-Experiência prévia com testes automatizados: nível de familiaridade com frameworks de teste, também medido por questionário. Pode influenciar diretamente a qualidade dos testes produzidos.
-
-Experiência prévia com IA em programação: frequência de uso de ferramentas de IA antes do experimento. Estudantes muito acostumados com IA podem se comportar de maneira diferente de estudantes que nunca usaram.
-
-Tarefa específica e ordem de execução: tarefa A e tarefa B, bem como a ordem em que são executadas (com IA primeiro ou sem IA primeiro), serão usadas como mecanismos de contrabalanço para reduzir o efeito de aprendizagem e de fadiga.
+- **Experiência prévia em programação:** tempo de estudo em programação e prática em projetos, medidos por questionário de perfil. Podem ser usados para agrupar participantes em faixas de experiência.
+- **Experiência prévia com testes automatizados:** nível de familiaridade com frameworks de teste, também medido por questionário. Pode influenciar diretamente a qualidade dos testes produzidos.
+- **Experiência prévia com IA em programação:** frequência de uso de ferramentas de IA antes do experimento. Estudantes muito acostumados com IA podem se comportar de maneira diferente de estudantes que nunca usaram.
+- **Tarefa específica e ordem de execução:** tarefa A e tarefa B, bem como a ordem em que são executadas (com IA primeiro ou sem IA primeiro), serão usadas como mecanismos de contrabalanço para reduzir o efeito de aprendizagem e de fadiga.
 
 Essas variáveis serão medidas e consideradas na análise, para reduzir a chance de que confundam a interpretação dos efeitos do fator principal uso de IA.
+
+---
 
 ## 8.7 Possíveis variáveis de confusão conhecidas
 
 Além das variáveis de controle, existem variáveis de confusão potenciais que podem influenciar os resultados e que, embora não possam ser totalmente controladas, serão monitoradas.
 
-Motivação e engajamento: o grau de motivação individual do estudante no dia do experimento pode impactar esforço, tempo e qualidade do trabalho. Questionários podem incluir questões simples de autoavaliação de motivação.
-
-Carga de trabalho e cansaço: estudantes com alta carga de provas, trabalhos ou cansaço físico podem apresentar desempenho diferente. Sempre que possível, o agendamento das sessões tentará evitar períodos de alta sobrecarga.
-
-Familiaridade com o domínio do sistema sob teste: estudantes que se identificam mais com o domínio funcional (por exemplo, cadastro, e-commerce) podem entender mais rapidamente as user stories. Esse aspecto poderá ser perguntado de forma simples em questionário.
-
-Variações de ambiente: diferenças entre ambiente de laboratório e ambiente pessoal (ruídos, distrações) podem influenciar tempo e esforço. A coleta registrará em que contexto cada sessão ocorreu.
+- **Motivação e engajamento:** o grau de motivação individual do estudante no dia do experimento pode impactar esforço, tempo e qualidade do trabalho. Questionários podem incluir questões simples de autoavaliação de motivação.
+- **Carga de trabalho e cansaço:** estudantes com alta carga de provas, trabalhos ou cansaço físico podem apresentar desempenho diferente. Sempre que possível, o agendamento das sessões tentará evitar períodos de alta sobrecarga.
+- **Familiaridade com o domínio do sistema sob teste:** estudantes que se identificam mais com o domínio funcional (por exemplo, cadastro, e-commerce) podem entender mais rapidamente as user stories. Esse aspecto poderá ser perguntado de forma simples em questionário.
+- **Variações de ambiente:** diferenças entre ambiente de laboratório e ambiente pessoal (ruídos, distrações) podem influenciar tempo e esforço. A coleta registrará em que contexto cada sessão ocorreu.
 
 Essas variáveis de confusão serão levadas em conta na interpretação dos resultados, reconhecendo que a validade externa e interna do estudo é influenciada também por esses fatores contextuais.
+
+---
 
 ## 8.8 Tabela de variáveis e descrições
 
 A tabela a seguir sintetiza as principais variáveis do experimento, seu tipo e uma breve descrição, bem como sua relação com as métricas quando aplicável.
 
-| Nome da variável                 | Tipo                               | Descrição                                                                                                        | Métrica associada (quando houver) |
-|----------------------------------|------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------|
-| Uso de IA                        | Independente (fator)              | Indica se o participante executa a tarefa com acesso à ferramenta de IA ou sem acesso à IA                      | Não se aplica diretamente         |
-| Tarefa (A ou B)                  | Fator / bloqueio                  | Identifica qual conjunto de user story e módulo do sistema está sendo usado na tarefa                           | Não se aplica diretamente         |
-| Entendimento da user story       | Dependente                         | Grau de entendimento da user story e critérios de aceitação                                                     | M1                                 |
-| Identificação de critérios       | Dependente                         | Proporção de critérios de aceitação corretamente identificados                                                  | M2                                 |
-| Erros de interpretação           | Dependente                         | Número de erros relevantes de interpretação presentes em casos de teste em linguagem natural                    | M3                                 |
-| Cobertura por linha              | Dependente                         | Cobertura de código por linha obtida pelos testes automatizados                                                 | M4                                 |
-| Cobertura por ramo               | Dependente                         | Cobertura de código por ramo obtida pelos testes automatizados                                                  | M5                                 |
-| Cobertura de critérios de aceitação | Dependente                      | Proporção de critérios de aceitação com pelo menos um teste automatizado associado                              | M6                                 |
-| Defeitos detectados              | Dependente                         | Número absoluto de defeitos semeados identificados pelos testes automatizados                                   | M7                                 |
-| Taxa de detecção de defeitos     | Dependente                         | Proporção de defeitos semeados detectados em relação ao total de defeitos                                      | M8                                 |
-| Tempo de tarefa                  | Dependente                         | Tempo total gasto na tarefa, do início da leitura da user story ao término dos testes                           | M9                                 |
-| Número de testes implementados   | Dependente                         | Quantidade de testes automatizados implementados pelo participante                                              | M10                                |
-| Produtividade em testes          | Dependente                         | Número de testes automatizados por hora de tarefa                                                               | M11                                |
-| Esforço percebido                | Dependente (subjetiva)            | Percepção do esforço necessário para realizar a tarefa                                                          | M12                                |
-| Confiança nos testes             | Dependente (subjetiva)            | Grau de confiança do participante nos testes que produziu                                                       | M13                                |
-| Uso efetivo da IA                | Dependente / mediadora            | Intensidade de uso da IA durante a tarefa, mensurada por interações ou sugestões aceitas                        | M14                                |
-| Dependência percebida da IA      | Dependente (subjetiva)            | Percepção do quanto o estudante sente que precisa da IA para executar a tarefa                                  | M15                                |
-| Utilidade percebida da IA        | Dependente (subjetiva)            | Percepção da utilidade da IA para entender user stories e gerar testes                                          | M16                                |
-| Experiência prévia em programação| Controle / contexto               | Nível de experiência em programação, medido por questionário                                                    | Não se aplica diretamente         |
-| Experiência prévia em testes     | Controle / contexto               | Nível de experiência em testes automatizados                                                                    | Não se aplica diretamente         |
-| Experiência prévia com IA        | Controle / contexto               | Frequência de uso de IA em programação antes do experimento                                                     | Não se aplica diretamente         |
+| Nome da variável                  | Tipo                         | Descrição                                                                                                        | Métrica associada (quando houver) |
+|-----------------------------------|------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------|
+| Uso de IA                         | Independente (fator)         | Indica se o participante executa a tarefa com acesso à ferramenta de IA ou sem acesso à IA                      | Não se aplica diretamente         |
+| Tarefa (A ou B)                   | Fator / bloqueio             | Identifica qual conjunto de user story e módulo do sistema está sendo usado na tarefa                           | Não se aplica diretamente         |
+| Entendimento da user story        | Dependente                   | Grau de entendimento da user story e critérios de aceitação                                                     | M1                                 |
+| Identificação de critérios        | Dependente                   | Proporção de critérios de aceitação corretamente identificados                                                  | M2                                 |
+| Erros de interpretação            | Dependente                   | Número de erros relevantes de interpretação presentes em casos de teste em linguagem natural                    | M3                                 |
+| Cobertura por linha               | Dependente                   | Cobertura de código por linha obtida pelos testes automatizados                                                 | M4                                 |
+| Cobertura por ramo                | Dependente                   | Cobertura de código por ramo obtida pelos testes automatizados                                                  | M5                                 |
+| Cobertura de critérios de aceitação | Dependente                 | Proporção de critérios de aceitação com pelo menos um teste automatizado associado                              | M6                                 |
+| Defeitos detectados               | Dependente                   | Número absoluto de defeitos semeados identificados pelos testes automatizados                                   | M7                                 |
+| Taxa de detecção de defeitos      | Dependente                   | Proporção de defeitos semeados detectados em relação ao total de defeitos                                      | M8                                 |
+| Tempo de tarefa                   | Dependente                   | Tempo total gasto na tarefa, do início da leitura da user story ao término dos testes                           | M9                                 |
+| Número de testes implementados    | Dependente                   | Quantidade de testes automatizados implementados pelo participante                                              | M10                                |
+| Produtividade em testes           | Dependente                   | Número de testes automatizados por hora de tarefa                                                               | M11                                |
+| Esforço percebido                 | Dependente (subjetiva)       | Percepção do esforço necessário para realizar a tarefa                                                          | M12                                |
+| Confiança nos testes              | Dependente (subjetiva)       | Grau de confiança do participante nos testes que produziu                                                       | M13                                |
+| Uso efetivo da IA                 | Dependente / mediadora       | Intensidade de uso da IA durante a tarefa, mensurada por interações ou sugestões aceitas                        | M14                                |
+| Dependência percebida da IA       | Dependente (subjetiva)       | Percepção do quanto o estudante sente que precisa da IA para executar a tarefa                                  | M15                                |
+| Utilidade percebida da IA         | Dependente (subjetiva)       | Percepção da utilidade da IA para entender user stories e gerar testes                                          | M16                                |
+| Experiência prévia em programação | Controle / contexto          | Nível de experiência em programação, medido por questionário                                                    | Não se aplica diretamente         |
+| Experiência prévia em testes      | Controle / contexto          | Nível de experiência em testes automatizados                                                                    | Não se aplica diretamente         |
+| Experiência prévia com IA         | Controle / contexto          | Frequência de uso de IA em programação antes do experimento                                                     | Não se aplica diretamente         |
 
 Essa tabela resume de forma clara quais são as variáveis centrais do experimento, quais são manipuladas, quais são respostas, e quais são contextuais ou de controle.
 
@@ -587,25 +588,27 @@ Esse tipo de desenho é adequado ao contexto porque:
 
 Embora exista um arranjo conceitual de fatores que lembra um desenho fatorial dois por dois (uso de IA por tarefa), o foco principal está no contraste entre condições com e sem IA, com as tarefas atuando como contextos distintos, mas comparáveis.
 
+---
+
 ## 9.2 Randomização e alocação
 
-A randomização será aplicada em dois pontos principais:
+A randomização será aplicada em dois pontos principais.
 
 Primeiro, na definição da ordem de execução das condições para cada participante. Haverá pelo menos duas sequências possíveis, por exemplo:
 
-Sequência S1: Tarefa A sem IA, seguida de Tarefa B com IA.
-
-Sequência S2: Tarefa A com IA, seguida de Tarefa B sem IA.
+- **Sequência S1:** Tarefa A sem IA, seguida de Tarefa B com IA.
+- **Sequência S2:** Tarefa A com IA, seguida de Tarefa B sem IA.
 
 Adicionalmente, podem ser definidas sequências que iniciem pela Tarefa B, de forma a diversificar ainda mais a ordem, como:
 
-Sequência S3: Tarefa B sem IA, seguida de Tarefa A com IA.
-
-Sequência S4: Tarefa B com IA, seguida de Tarefa A sem IA.
+- **Sequência S3:** Tarefa B sem IA, seguida de Tarefa A com IA.
+- **Sequência S4:** Tarefa B com IA, seguida de Tarefa A sem IA.
 
 Os participantes serão alocados aleatoriamente a uma das sequências, de maneira aproximadamente balanceada. A randomização poderá ser feita utilizando uma ferramenta simples, como uma planilha com funções de aleatoriedade ou um script básico que gere números aleatórios.
 
 Segundo, na atribuição das tarefas aos horários ou sessões, para evitar que um determinado horário fique concentrado em uma única combinação de fatores. Isso ajuda a reduzir o risco de viés decorrente de fatores externos associados ao horário ou ao dia da semana.
+
+---
 
 ## 9.3 Balanceamento e contrabalanço
 
@@ -618,28 +621,27 @@ O contrabalanço é a estratégia utilizada para mitigar efeitos de ordem e de a
 
 Na análise de dados, será possível verificar se a ordem teve impacto relevante, comparando resultados agregados por sequência. Caso algum efeito de ordem seja identificado, ele será discutido como limitação e, quando possível, controlado estatisticamente.
 
+---
+
 ## 9.4 Número de grupos e sessões
 
 Com base no desenho definido, a estrutura de grupos e sessões será organizada da seguinte forma.
 
-Condições principais:
+**Condições principais**
 
-Condição controle: tarefas executadas sem uso de IA.
+- **Condição controle:** tarefas executadas sem uso de IA.
+- **Condição tratamento:** tarefas executadas com uso de IA.
 
-Condição tratamento: tarefas executadas com uso de IA.
-
-Grupos por sequência:
+**Grupos por sequência**
 
 Os participantes não serão divididos em grupos fixos que fiquem em apenas uma condição. Em vez disso, cada participante comporá dois grupos lógicos: em uma sessão, integrará o conjunto de observações da condição sem IA; em outra sessão, integrará o conjunto de observações da condição com IA. A combinação de ordem e tarefa define as sequências S1 a S4.
 
-Sessões:
+**Sessões**
 
 Cada participante participará de duas sessões de experimento, que podem ocorrer em um mesmo encontro estendido (por exemplo, duas horas consecutivas) ou em dois encontros próximos, a depender da organização logística. Em cada sessão, o estudante receberá uma user story e um módulo do sistema sob teste, executará a leitura, derivará casos de teste em linguagem natural, implementará testes automatizados, executará os testes e preencherá os questionários correspondentes.
 
-Número de participantes:
+**Número de participantes**
 
 O número exato de participantes será definido de acordo com a disponibilidade, mas o planejamento considera um mínimo desejável de 24 estudantes, distribuídos de forma aproximadamente uniforme entre as sequências possíveis. Esse número permite que a análise estatística obtenha estimativas razoáveis de médias e variâncias, e que comparações entre as condições com e sem IA sejam realizadas com um mínimo de robustez.
 
 Em síntese, o desenho experimental busca um equilíbrio entre rigor metodológico e viabilidade prática em contexto de TCC, aproveitando medidas repetidas para aumentar a sensibilidade às diferenças entre condições, utilizando randomização para minimizar viés, e aplicando balanceamento e contrabalanço para reduzir efeitos de ordem e efeitos específicos de tarefa.
-
-

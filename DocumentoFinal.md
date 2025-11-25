@@ -15,9 +15,13 @@ EXP-IA-US-TESTES-2025
 
 ### 1.3 Versão do documento e histórico de revisão
 
-Versão atual do documento: v1.0.  
-Histórico de revisão:  
-v1.0 – elaboração inicial do plano de experimento para o TCC.
+Versão atual do documento: v1.4.
+Histórico de revisão:
+- **v1.0** – elaboração inicial do plano de experimento para o TCC (estrutura básica e seções 1 e 2).
+- **v1.1** – detalhamento dos objetivos, questões de pesquisa e métricas no modelo GQM (seção 3) e escopo/contexto do experimento (seção 4).
+- **v1.2** – inclusão e refinamento das seções 5 e 6 (stakeholders, impactos, riscos de alto nível, premissas, critérios de sucesso e critérios de parada antecipada).
+- **v1.3** – inclusão das seções 7, 8 e 9 (modelo conceitual, hipóteses formais, variáveis, fatores, tratamentos, objetos de estudo e desenho experimental).
+- **v1.4** – inclusão e consolidação das seções 10 a 20 (população e amostragem, instrumentação e protocolo operacional, plano de análise de dados, avaliação de validade, ética e privacidade, recursos e orçamento, cronograma e riscos operacionais, governança, documentação e reprodutibilidade, plano de comunicação e critérios de prontidão para execução).
 
 ### 1.4 Datas (criação, última atualização)
 
@@ -908,4 +912,363 @@ Primeiro, todas as respostas abertas serão reunidas em um único documento ou p
 Na etapa seguinte, esses códigos serão agrupados em categorias mais amplas, como benefícios percebidos, riscos percebidos, estratégias de uso da IA e percepções sobre aprendizado. A partir dessas categorias, será realizada uma análise temática simples, buscando relacionar os temas qualitativos com os resultados quantitativos. Por exemplo, pode-se observar se participantes que relatam alta dependência da IA também apresentam valores elevados em M15 (dependência percebida) e se isso se reflete ou não em melhorias reais em cobertura (M4, M5) ou taxa de defeitos detectados (M8).
 
 Por fim, na redação dos resultados e da discussão do TCC, serão utilizadas citações representativas (anonimizadas) para ilustrar e enriquecer a interpretação dos achados estatísticos, mostrando como os estudantes, na prática, vivenciaram o uso de IA nas tarefas de entendimento de user stories e geração de testes automatizados. Dessa forma, o plano de análise qualitativa reforça o caráter empírico do trabalho e aprofunda a compreensão sobre o fenômeno em estudo, mantendo-se plenamente exequível dentro do escopo de um TCC.
+# 13. Avaliação de validade (ameaças e mitigação)
+
+## 13.1 Validade de conclusão
+
+A validade de conclusão refere-se à robustez das inferências estatísticas que serão feitas a partir dos dados coletados, em especial quanto à identificação de diferenças entre as condições com uso de IA e sem uso de IA.
+
+Uma primeira ameaça relevante é o baixo poder estatístico, decorrente do tamanho de amostra limitado típico de um TCC de graduação. Mesmo utilizando um desenho com medidas repetidas, em que cada participante realiza uma tarefa com IA e outra sem IA, efeitos de pequena magnitude podem não ser detectados. Para mitigar essa ameaça, o experimento foi planejado com métricas predominantemente contínuas ou quase contínuas (por exemplo, M1, M4, M5, M8, M9, M10, M11), que tendem a aumentar a sensibilidade dos testes, e com foco em comparações intra-sujeitos, explorando diferenças entre condições para o mesmo participante. Além disso, a análise não se limitará a valores de p, incluindo também tamanhos de efeito e intervalos de confiança, de modo a contextualizar possíveis resultados não significativos em termos de magnitude observada.
+
+Outra ameaça é a violação de pressupostos dos testes estatísticos, como normalidade das diferenças entre condições, homogeneidade de variâncias ou independência das observações. A mitigação prevê inspeção exploratória dos dados (por exemplo, histogramas, boxplots, análise de assimetria) e a utilização de testes não paramétricos (como Wilcoxon para dados pareados), sempre que os pressupostos para testes paramétricos não forem razoavelmente atendidos. Essa abordagem reduz o risco de conclusões incorretas por inadequação do método estatístico escolhido.
+
+Erros de medida também constituem ameaça importante, principalmente nas métricas que exigem julgamento humano, como M1 (pontuação de entendimento), M2 (proporção de critérios identificados), M3 (erros de interpretação) e M6 (cobertura de critérios de aceitação). Para reduzir essa ameaça, serão estabelecidos critérios de correção detalhados e previamente documentados, com exemplos de classificação de respostas e de identificação de erros. Esses critérios serão testados no estudo piloto e refinados antes da coleta principal. Sempre que houver dúvidas de interpretação, o pesquisador poderá discutir casos específicos com o orientador, buscando consistência.
+
+Por fim, o uso de múltiplas métricas gera risco de inflar a probabilidade de encontrar alguma diferença estatisticamente significativa apenas por acaso. Para mitigar, o conjunto de métricas principais por objetivo será definido previamente (por exemplo, M1 para entendimento, M4 e M8 para qualidade de testes, M9 e M12 para esforço e tempo) e as demais análises serão classificadas como exploratórias. A interpretação dos resultados levará em conta esse caráter exploratório, evitando conclusões fortes baseadas apenas em um único teste isolado.
+
+---
+
+## 13.2 Validade interna
+
+A validade interna diz respeito à capacidade de atribuir os efeitos observados ao fator principal de interesse, isto é, ao uso de IA, e não a causas alternativas.
+
+Uma ameaça importante é o efeito de aprendizagem e de ordem. Como cada participante realiza duas tarefas, uma com IA e outra sem IA, pode haver melhoria de desempenho na segunda tarefa simplesmente pelo fato de o participante já estar familiarizado com o sistema sob teste, com o formato das user stories e com o processo de derivação e implementação de testes. Essa ameaça é mitigada por meio de contrabalanço de ordem e de tarefa: alguns participantes iniciarão na condição sem IA e depois executarão a condição com IA, enquanto outros seguirão a ordem inversa. Além disso, utilizam-se duas tarefas distintas (Tarefa A e Tarefa B), com dificuldade planejada como equivalente, distribuídas de forma balanceada entre as combinações de ordem e uso de IA.
+
+A história, entendida como eventos externos ocorridos entre as sessões, pode também ameaçar a validade interna. Exemplos incluem aulas específicas sobre testes automatizados ou sobre uso de IA em programação, bem como experiências práticas fora do experimento. Para mitigar, planeja-se reduzir o intervalo de tempo entre as duas sessões de cada participante, idealmente dentro de poucas semanas e no mesmo período letivo. Informações contextuais sobre eventos relevantes poderão ser registradas em anotação de campo e consideradas na discussão dos resultados.
+
+Diferenças individuais entre participantes (seleção) são parcialmente controladas pelo desenho com medidas repetidas, já que cada estudante é comparado consigo mesmo nas condições com e sem IA. Ainda assim, experiência prévia em programação, testes e uso de IA pode influenciar o comportamento. Por isso, essas variáveis serão medidas no questionário de caracterização e utilizadas como variáveis de contexto na análise, permitindo, quando pertinente, análises adicionais por subgrupos ou interpretação diferenciada dos resultados.
+
+A instrumentação, isto é, mudanças nos instrumentos ou na forma de aplicação entre sessões, também é uma ameaça potencial. O protocolo aborda essa questão utilizando os mesmos questionários, templates de casos de teste, scripts de teste e instruções para todas as sessões e condições, com roteiros padronizados para o experimentador. O estudo piloto auxiliará na identificação de pontos de ambiguidade ou inconsistência, que serão ajustados antes da coleta principal.
+
+Outro aspecto é a difusão de tratamento, quando participantes que já realizaram uma condição compartilham detalhes com colegas que ainda irão participar. Embora seja difícil eliminar completamente essa possibilidade em ambiente acadêmico, o experimentador instruirá os participantes a não divulgar detalhes específicos das tarefas (como user stories, defeitos semeados ou soluções de teste) até o término das coletas, reduzindo a probabilidade de contaminação direta.
+
+---
+
+## 13.3 Validade de constructo
+
+A validade de constructo trata de verificar se as medidas escolhidas representam adequadamente os conceitos teóricos que se deseja estudar, como entendimento de user stories, qualidade de testes automatizados, esforço e percepção de uso da IA.
+
+No caso do constructo entendimento de user stories, o principal indicador é a pontuação em questionário objetivo (M1). Uma ameaça de validade é que esse instrumento avalie apenas memorização literal do texto, e não compreensão real das regras de negócio e dos critérios de aceitação. Para mitigar, as questões serão elaboradas de forma a exigir interpretação dos comportamentos esperados do sistema, identificação de cenários e compreensão de regras, e não apenas reprodução de frases da user story. O estudo piloto permitirá identificar questões muito vagas ou pouco discriminativas, que serão revisadas.
+
+Para o constructo qualidade dos testes automatizados, o plano utiliza um conjunto de métricas: cobertura estrutural (M4 e M5), cobertura de critérios de aceitação (M6), detecção de defeitos semeados (M7 e M8) e produtividade (M10 e M11). A ameaça aqui é confundir uma dimensão específica, como alta cobertura de código, com qualidade geral. A mitigação consiste em interpretar os resultados sempre de forma conjunta, analisando como essas métricas se complementam. Por exemplo, um conjunto de testes com cobertura alta, mas baixa detecção de defeitos, será interpretado de forma distinta de um conjunto com cobertura moderada e alta taxa de detecção.
+
+Os constructos associados a esforço e percepção (M12 a M16) dependem da correta compreensão das escalas pelos participantes. Para reduzir ambiguidades, as questões serão formuladas em linguagem clara, com descrições textuais dos extremos e pontos intermediários das escalas, evitando termos técnicos pouco familiares. A consistência das respostas será observada, e as questões serão validadas no piloto quanto à compreensão pelos estudantes.
+
+O constructo uso de IA, por sua vez, combina medida objetiva aproximada (M14, número de interações relevantes com a ferramenta) e medidas subjetivas de dependência e utilidade (M15 e M16). Reconhece-se que o número de interações não captura a qualidade do uso, mas esse indicador, complementado por respostas abertas e pelas escalas de percepção, oferece uma visão mais completa do comportamento do participante diante da ferramenta.
+
+---
+
+## 13.4 Validade externa
+
+A validade externa está relacionada à possibilidade de generalizar os resultados do experimento para outros contextos, populações e ambientes.
+
+O contexto do estudo é acadêmico, envolvendo estudantes de Engenharia de Software de períodos intermediários ou avançados, trabalhando em um sistema sob teste de pequeno porte, com tarefas de duração limitada. Em função disso, a generalização para desenvolvedores profissionais que atuam em sistemas complexos, com grandes bases de código e restrições organizacionais mais rígidas, deve ser feita com cautela. Os resultados são, em primeira instância, representativos de atividades de ensino e de formação de estudantes em ambiente universitário.
+
+Além disso, o experimento utiliza tecnologias específicas: uma linguagem e um framework de testes escolhidos para o sistema sob teste (por exemplo, JavaScript/Node e Jest) e uma ferramenta de IA baseada em modelo de linguagem, acessada via navegador. Em contextos que utilizem tecnologias muito distintas ou ferramentas de IA com características diferentes, os efeitos do uso da IA na derivação de testes e no entendimento de user stories podem variar.
+
+Também é importante considerar a cultura institucional da PUC Minas, o currículo do curso e o perfil típico dos estudantes. Outros cursos ou instituições com abordagens pedagógicas diferentes, exposição maior ou menor a IA e práticas de ensino alternativas podem apresentar resultados diferentes. Por isso, a generalização mais direta é para contextos educacionais semelhantes, de graduação em Engenharia de Software ou áreas afins.
+
+Apesar dessas limitações, o constructo central estudado – uso de IA no entendimento de user stories e geração de testes automatizados – é relevante para uma ampla gama de cenários, e o experimento pode ser visto como um ponto de partida para estudos subsequentes com outras populações e sistemas.
+
+---
+
+## 13.5 Resumo das principais ameaças e estratégias de mitigação
+
+A tabela a seguir sintetiza as ameaças de validade consideradas mais críticas e as principais estratégias de mitigação planejadas no experimento.
+
+| Tipo de validade | Ameaça principal                                  | Estratégia de mitigação                                                                |
+| ---------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Conclusão        | Baixo poder estatístico                           | Desenho com medidas repetidas, uso de métricas contínuas, relato de tamanhos de efeito |
+| Conclusão        | Violação de pressupostos dos testes               | Inspeção da distribuição dos dados, uso de testes não paramétricos quando adequado     |
+| Interna          | Efeito de aprendizagem e ordem das tarefas        | Contrabalanço de ordem e tarefa, intervalo reduzido entre sessões                      |
+| Interna          | História (eventos externos entre sessões)         | Planejamento em período compacto, registro e discussão de eventos relevantes           |
+| Constructo       | Medidas não representarem adequadamente conceitos | Definição prévia de métricas, uso de múltiplas métricas por constructo, estudo piloto  |
+| Constructo       | Ambiguidade em escalas subjetivas                 | Formulação clara, exemplos nas instruções, validação no piloto                         |
+| Externa          | Contexto acadêmico e sistema pequeno              | Descrição detalhada do contexto, discussão explícita das limitações de generalização   |
+| Externa          | Dependência de tecnologias e IA específicas       | Reconhecimento de escopo restrito e necessidade de estudos em outros contextos         |
+
+Essa síntese orientará a discussão de resultados no TCC, reforçando transparência e cuidado na interpretação das evidências obtidas.
+
+---
+
+# 14. Ética, privacidade e conformidade
+
+## 14.1 Questões éticas
+
+A realização do experimento envolve participantes humanos, no caso estudantes de graduação, o que exige atenção a aspectos éticos. Um primeiro ponto diz respeito à voluntariedade da participação. Como o estudo pode ser divulgado em disciplinas e eventualmente utilizar tempo de aula ou de laboratório, existe o risco de percepção de que a participação seria obrigatória. Para mitigar esse risco, todas as comunicações aos estudantes reforçarão explicitamente que a participação é voluntária, que a decisão de participar ou não não influenciará notas nem avaliações formais, e que é possível desistir a qualquer momento, sem qualquer prejuízo acadêmico.
+
+Outro aspecto ético relevante é o uso de estudantes como sujeitos de pesquisa. O experimento foi planejado de forma a oferecer também um benefício educacional direto aos participantes, na forma de prática estruturada de entendimento de requisitos, derivação de testes e uso crítico de ferramentas de IA, com tarefas compatíveis com a carga horária usual de atividades práticas. Assim, busca-se manter um equilíbrio adequado entre o esforço exigido e os benefícios formativos proporcionados.
+
+Há também a preocupação com possíveis constrangimentos decorrentes da divulgação de resultados individuais. Para evitar qualquer exposição indevida, o plano prevê análise e apresentação de resultados apenas em formato agregado, sem identificação nominal. Nenhum participante será exposto publicamente por desempenho em questionários, tarefas ou métricas, e os dados não serão utilizados para qualquer tipo de avaliação de desempenho nas disciplinas.
+
+---
+
+## 14.2 Consentimento informado
+
+Antes de participar do experimento, cada estudante elegível receberá informações claras e objetivas sobre o estudo, incluindo objetivo geral, atividades previstas, tempo estimado, riscos e benefícios esperados, forma de tratamento dos dados e contatos para esclarecimento de dúvidas. Essas informações serão apresentadas em sala, durante a Sessão 0, e também em documento escrito.
+
+O consentimento informado será registrado por meio de termo específico, físico ou eletrônico, no qual o estudante declara que compreendeu as informações fornecidas, que aceita participar voluntariamente e que está ciente de que pode retirar seu consentimento a qualquer momento, sem qualquer punição ou prejuízo. Somente estudantes que assinarem (ou confirmarem eletronicamente) esse termo serão incluídos na amostra do experimento.
+
+---
+
+## 14.3 Privacidade e proteção de dados
+
+Os dados pessoais coletados serão mínimos e estritamente necessários para a condução do estudo. Incluem, em geral, identificação (nome e e-mail institucional), informações de caracterização (período do curso, experiência prévia em programação, testes e uso de IA) e respostas aos questionários aplicados.
+
+Para garantir privacidade, os dados utilizados na análise serão anonimizados por meio de códigos de participante, de modo que a planilha de análise contenha apenas identificadores numéricos e valores das métricas M1 a M16. A correspondência entre códigos e nomes será mantida em arquivo separado, protegido por senha, em ambiente seguro, com acesso restrito ao pesquisador e, quando necessário, ao orientador.
+
+Após a conclusão do TCC e de eventuais revisões decorrentes da banca, os dados identificáveis poderão ser excluídos, mantendo-se apenas conjuntos de dados anonimizados para fins de reprodutibilidade e eventual publicação acadêmica. Em nenhuma circunstância os dados serão compartilhados publicamente de forma a permitir a identificação de participantes individuais.
+
+---
+
+## 14.4 Aprovações necessárias
+
+A execução do experimento deverá observar as normas institucionais aplicáveis. O plano prevê, no mínimo, as seguintes aprovações e anuências:
+
+1. Aprovação do orientador do TCC quanto ao desenho metodológico, à adequação ética geral e ao alinhamento com os objetivos do trabalho.
+2. Anuência dos docentes das disciplinas nas quais o experimento for divulgado ou cujo tempo de aula venha a ser utilizado, garantindo que o uso de tempo e de infraestrutura esteja alinhado ao planejamento das disciplinas.
+3. Anuência da coordenação do curso de Engenharia de Software quanto ao uso de laboratórios, horários e forma de comunicação com as turmas.
+4. Quando exigido pelas diretrizes da instituição, submissão do projeto de pesquisa a um comitê de ética em pesquisa envolvendo seres humanos, com aguardo do parecer favorável antes do início da coleta de dados.
+
+O status dessas aprovações será registrado em seção específica do TCC, garantindo transparência quanto à conformidade ética e institucional do estudo.
+
+---
+
+# 15. Recursos, infraestrutura e orçamento
+
+## 15.1 Recursos humanos e papéis
+
+A equipe diretamente envolvida no experimento é composta por poucos integrantes, com papéis bem definidos.
+
+O pesquisador principal, autor do TCC, é responsável pelo planejamento detalhado do experimento, preparação do sistema sob teste, elaboração e validação de instrumentos, condução das sessões com participantes, coleta e organização de dados, execução das análises e redação das seções correspondentes no trabalho final.
+
+O orientador do TCC atua como responsável pela supervisão científica do estudo, aprovando o desenho experimental, revisando o plano, sugerindo ajustes metodológicos, acompanhando o estudo piloto, apoiando a interpretação de resultados e garantindo aderência às boas práticas de pesquisa em Engenharia de Software.
+
+Docentes das disciplinas eventualmente envolvidas colaboram na divulgação do experimento, no agendamento das sessões, na liberação de tempo de aula ou laboratório e no alinhamento entre o experimento e as demais atividades didáticas. A coordenação do curso, quando acionada, aprova o uso de recursos institucionais e garante que o estudo se enquadre nas diretrizes do curso.
+
+---
+
+## 15.2 Infraestrutura técnica necessária
+
+A infraestrutura técnica necessária foi planejada para ser compatível com a realidade de um TCC, utilizando recursos já disponíveis ou de baixo custo.
+
+É necessário um ambiente de desenvolvimento capaz de executar o sistema sob teste e seus testes automatizados, o que inclui computadores de laboratório ou notebooks pessoais com sistema operacional compatível, instalação de Node.js (ou tecnologia equivalente, de acordo com a implementação escolhida) e um editor de código, como Visual Studio Code.
+
+O código do sistema sob teste, os scripts de teste e cobertura e os materiais de apoio serão mantidos em um repositório de controle de versão, em plataforma como GitHub ou GitLab.
+
+Para a condição com uso de IA, é necessário acesso a uma ferramenta de inteligência artificial baseada em modelo de linguagem, acessível via navegador, com capacidade suficiente para o número de interações previstas, respeitando-se os termos de uso da ferramenta e as políticas da instituição.
+
+Os questionários serão implementados em plataforma de formulários eletrônicos, como Google Forms ou solução equivalente. Por fim, a análise dos dados poderá ser realizada utilizando planilhas eletrônicas e, se necessário, scripts simples em linguagem de análise estatística.
+
+---
+
+## 15.3 Materiais e insumos
+
+Os materiais e insumos necessários ao experimento são majoritariamente digitais.
+
+Incluem o plano de experimento, guiões do participante, roteiros para o experimentador, termos de consentimento, slides utilizados na Sessão 0, questionários de caracterização, de entendimento e de percepção, templates de casos de teste em linguagem natural, scripts de execução de testes e geração de cobertura, arquivos de configuração do projeto e modelos de planilhas de consolidação de dados.
+
+Não há necessidade de materiais físicos específicos além de acesso a computadores e, eventualmente, impressões pontuais de termos de consentimento, caso o processo de assinatura não seja eletrônico.
+
+---
+
+## 15.4 Orçamento e custos estimados
+
+O experimento foi concebido para ter custo financeiro direto reduzido, compatível com a realidade de um TCC de graduação.
+
+A principal parcela de custo diz respeito ao tempo dedicado pelo pesquisador e pelo orientador para planejamento, preparação de materiais, condução das sessões e análise dos dados, sem remuneração específica, como parte da carga de TCC.
+
+O uso de laboratórios, energia elétrica e infraestrutura de rede é absorvido pela instituição como parte de suas atividades regulares. As ferramentas de desenvolvimento, controle de versão, formulários e análise de dados podem ser utilizadas em versões gratuitas ou acadêmicas.
+
+O único componente potencialmente sujeito a custo direto é a ferramenta de IA, caso a solução escolhida possua limitações severas no uso gratuito. Nesse caso, o plano prevê avaliar opções com baixo custo e uso controlado, ou restringir a quantidade de interações por participante de forma a permanecer dentro de limites gratuitos, mantendo a viabilidade financeira do experimento.
+
+---
+
+# 16. Cronograma, marcos e riscos operacionais
+
+## 16.1 Macrocronograma até o início da execução
+
+Considerando um semestre típico de TCC, o cronograma até a execução do experimento pode ser organizado em fases, em ordem lógica.
+
+Na primeira fase, ao longo das primeiras semanas do semestre, ocorre o detalhamento do plano de experimento, com consolidação do referencial teórico, definição final de métricas, fatores, variáveis e desenho experimental, em diálogo com o orientador.
+
+Na segunda fase, desenvolve-se e estabiliza-se o sistema sob teste, semeiam-se defeitos de forma controlada, configuram-se scripts de teste e cobertura, elaboram-se os questionários, templates e roteiros, e organiza-se o repositório com a estrutura final de diretórios e arquivos.
+
+Em seguida, na terceira fase, são buscadas as aprovações necessárias: validação do plano pelo orientador, anuência de docentes e coordenação e, quando aplicável, submissão a comitê de ética. Essa fase deve ser iniciada o mais cedo possível, para evitar atrasos na coleta.
+
+Na quarta fase, realiza-se o estudo piloto com um pequeno grupo de estudantes, preferencialmente com perfil semelhante ao da amostra principal, testando o fluxo completo do experimento, incluindo instalação do ambiente, execução das tarefas, aplicação dos questionários e geração das métricas. Com base nas observações, refinam-se instruções, tempos previstos e instrumentos.
+
+Somente após essas etapas é iniciada a preparação para a coleta principal, com divulgação do experimento, recrutamento dos participantes, aplicação do questionário de caracterização e realização da Sessão 0 de nivelamento e consentimento. Em seguida, são realizadas as Sessões 1 e 2, nas quais cada participante executa suas duas tarefas, uma com IA e outra sem IA, conforme a sequência designada.
+
+---
+
+## 16.2 Dependências entre atividades
+
+As atividades planejadas apresentam dependências claras que condicionam sua ordem de execução.
+
+A elaboração detalhada do plano de experimento é pré-requisito para a preparação de instrumentos e do sistema sob teste, uma vez que as métricas, fatores e tarefas definidas influenciam diretamente o design dos questionários, templating de casos de teste e semeadura de defeitos.
+
+A disponibilização do sistema sob teste, dos scripts de cobertura e dos formulários em versões estáveis é condição para a realização do estudo piloto, que testa precisamente a execução desses componentes.
+
+As aprovações éticas e institucionais, quando necessárias, devem ser obtidas antes do início do recrutamento e da Sessão 0, pois o consentimento informado dos participantes pressupõe um protocolo previamente validado.
+
+A Sessão 0, por sua vez, é dependência direta das etapas anteriores, e é condição para que os participantes ingressem nas Sessões 1 e 2, já compreendendo os objetivos e procedimentos do estudo.
+
+Por fim, a análise de dados depende da conclusão da coleta, já que todas as métricas M1 a M16 são originadas nas atividades realizadas nessas sessões.
+
+---
+
+## 16.3 Riscos operacionais e plano de contingência
+
+Alguns riscos operacionais podem afetar o cumprimento do cronograma e a qualidade da execução.
+
+Um risco relevante é o atraso em aprovações institucionais, que pode comprimir o tempo disponível para recrutamento e coleta. Como contingência, prevê-se iniciar a preparação de documentos para aprovação o quanto antes e, se necessário, ajustar o período de coleta, concentrando sessões em janelas específicas com maior disponibilidade de laboratório ou de horário.
+
+A baixa adesão de estudantes é outro risco. Caso o número de participantes seja inferior ao planejado, ainda será possível realizar o experimento, reconhecendo-se a limitação de poder estatístico nas análises. Como contingência, poderá ser ampliado o leque de turmas convidadas, desde que mantenham perfil semelhante de formação.
+
+Falhas de infraestrutura, como indisponibilidade de laboratório, problemas de rede ou dificuldades com instalação local, também podem interferir. O protocolo prevê a possibilidade de utilização de máquinas pessoais, desde que sejam garantidas equivalência de ambiente e instruções claras para configuração, com suporte do pesquisador para resolver problemas de instalação.
+
+Por fim, conflitos com o calendário acadêmico, como acúmulo de provas e trabalhos, podem reduzir a disponibilidade prática dos estudantes para participar. A mitigação passa por planejamento prévio com docentes e coordenação, buscando janelas menos sobrecarregadas para a realização das sessões.
+
+---
+
+# 17. Governança do experimento
+
+## 17.1 Papéis e responsabilidades formais
+
+A governança do experimento estabelece claramente as responsabilidades de cada ator envolvido.
+
+O pesquisador principal é responsável pela condução operacional do estudo, incluindo elaboração e manutenção do plano, preparação técnica, organização logística das sessões, comunicação com os participantes, coleta e consolidação dos dados e elaboração dos relatórios e capítulos do TCC.
+
+O orientador do TCC assume responsabilidade científica sobre o estudo, revisando o plano de experimento, validando o desenho metodológico, sugerindo ajustes, acompanhando o estudo piloto e a análise de resultados e aprovando a versão final das interpretações e conclusões apresentadas no trabalho.
+
+Docentes das disciplinas onde o experimento for divulgado atuam como facilitadores institucionais, autorizando o uso de parte do tempo de aula ou de laboratório, auxiliando na comunicação com os estudantes e garantindo que o experimento não conflite com outras atividades avaliativas críticas.
+
+A coordenação do curso, quando acionada, tem papel de aprovar o uso de recursos institucionais, validar aspectos gerais do cronograma e de uso de espaços e, quando aplicável, apoiar a tramitação de processos junto a comitês de ética.
+
+---
+
+## 17.2 Ritos de acompanhamento pré-execução
+
+Para garantir alinhamento contínuo entre planejamento e execução, são previstos alguns ritos de acompanhamento.
+
+Durante a fase de planejamento e preparação, o pesquisador e o orientador realizarão encontros periódicos, presenciais ou remotos, para discutir o detalhamento do plano, revisar instrumentos, analisar os resultados do piloto e ajustar o cronograma. A frequência dessas reuniões poderá ser quinzenal ou conforme necessidade, aumentando em períodos de decisão crítica.
+
+Antes do início da coleta principal, o pesquisador deverá apresentar o plano consolidado e o cronograma a docentes das disciplinas envolvidas e, quando pertinente, à coordenação, esclarecendo objetivos, formato das sessões, impactos sobre as aulas e formas de comunicação com os estudantes.
+
+Após o estudo piloto, uma reunião específica entre pesquisador e orientador será dedicada à análise dos resultados preliminares, identificação de problemas observados (por exemplo, tempos insuficientes, instruções ambíguas, dificuldades técnicas) e definição dos ajustes a serem implementados antes da coleta principal.
+
+---
+
+## 17.3 Processo de controle de mudanças no plano
+
+Apesar de o plano de experimento buscar um alto grau de detalhamento prévio, é possível que ajustes se mostrem necessários em função de limitações práticas ou de achados do piloto.
+
+Para manter a rastreabilidade e transparência, será mantido um histórico de versões do plano, contendo para cada atualização a data, a descrição das alterações realizadas e a justificativa principal. Alterações consideradas substantivas, como mudança no número de tarefas, alteração de métricas principais ou modificação relevante no protocolo de sessão, deverão ser discutidas previamente com o orientador.
+
+Mudanças que afetem a carga dos participantes, a natureza das atividades propostas ou o tratamento dos dados precisarão, além disso, ser comunicadas aos docentes envolvidos e, se houver aprovação ética formal, seguir os procedimentos institucionais para emendas de protocolo antes da implementação efetiva.
+
+---
+
+# 18. Plano de documentação e reprodutibilidade
+
+## 18.1 Repositórios e convenções de nomeação
+
+Para garantir organização e facilitar reuso e replicação, todos os artefatos do experimento serão mantidos em repositório de controle de versão com estrutura clara.
+
+Uma estrutura possível inclui um repositório principal com nome descritivo, contendo: diretório de documentação (`docs`) com o plano de experimento, termos de consentimento, guias e roteiros; diretório do sistema sob teste (`sut`) com o código, scripts de teste e cobertura e instruções de execução; diretório de scripts auxiliares (`scripts`) para análise dos dados; e diretório destinado a armazenar artefatos de resultados (`results`), como planilhas anonimizadas e saídas de análises estatísticas.
+
+Arquivos e diretórios seguirão convenções de nomeação consistentes e autoexplicativas, com nomes que indiquem claramente seu conteúdo e sua função dentro do experimento, facilitando a compreensão por outros pesquisadores ou turmas que venham a reutilizar o material.
+
+---
+
+## 18.2 Templates e artefatos padrão
+
+Serão definidos e armazenados no repositório os templates e artefatos padrão utilizados ao longo do experimento.
+
+Entre esses artefatos estão o modelo de questionário de caracterização dos participantes, o questionário de entendimento de user stories associado à métrica M1, o template de descrição de casos de teste em linguagem natural, o questionário pós-tarefa que contempla as métricas de percepção (M12 a M16), o roteiro detalhado para o experimentador em cada sessão, checklists de verificação de ambiente e instruções para execução dos testes.
+
+Esses modelos serão a base para execução do piloto e, após eventuais ajustes, permanecerão como versão de referência utilizada na coleta principal, contribuindo diretamente para a reprodutibilidade interna do estudo.
+
+---
+
+## 18.3 Plano de empacotamento para replicação futura
+
+Além da execução do experimento no contexto do TCC, prevê-se organizar um conjunto de artefatos que permita a replicação futura do estudo por outras turmas ou em outras instituições.
+
+Esse conjunto deverá incluir o plano de experimento final, com histórico de versões; o sistema sob teste em estado estável, acompanhado de documentação sobre os defeitos semeados; os instrumentos de coleta na forma final (questionários, templates, roteiros); um exemplo de planilha com dados anonimizados ilustrando o formato de registro das métricas M1 a M16; e um documento sintético descrevendo instruções para replicação, destacando elementos que precisam permanecer fixos para preservar o desenho original e aspectos que podem ser adaptados.
+
+Esse empacotamento facilitará tanto a replicação direta quanto variações do estudo, como a utilização de outras linguagens, frameworks ou ferramentas de IA.
+
+---
+
+# 19. Plano de comunicação
+
+## 19.1 Públicos e mensagens-chave pré-execução
+
+O plano de comunicação identifica os grupos que precisam ser informados em diferentes momentos e as mensagens centrais destinadas a cada um.
+
+O orientador do TCC deve receber comunicações regulares sobre o andamento do planejamento, a preparação de materiais, os resultados do estudo piloto, ajustes no protocolo e a definição do cronograma de coleta principal.
+
+A coordenação do curso deve ser informada sobre o objetivo do experimento, o uso previsto de infraestrutura (laboratórios, horários) e o posicionamento do estudo no contexto das atividades do curso, garantindo alinhamento com as diretrizes institucionais.
+
+Docentes das disciplinas onde o experimento será divulgado ou executado devem ser informados sobre o escopo do estudo, as datas propostas para Sessão 0 e para as sessões de tarefas, o tempo de aula ou laboratório requerido e eventuais impactos sobre a programação das disciplinas.
+
+Estudantes participantes precisam receber mensagens claras sobre o objetivo geral do estudo, o tipo de atividade a ser realizada, o número de sessões, a duração aproximada, a natureza voluntária da participação, os benefícios formativos esperados e o tratamento dos dados coletados.
+
+Demais estudantes das turmas envolvidas podem ser informados de forma geral sobre a existência do experimento como atividade de TCC, sem detalhes específicos sobre as tarefas, evitando qualquer pressão adicional.
+
+---
+
+## 19.2 Canais e frequência de comunicação
+
+Os canais de comunicação a serem utilizados serão compatíveis com a prática usual do curso.
+
+Comunicações formais com orientador, coordenação e docentes serão preferencialmente realizadas por e-mail institucional, permitindo registro e rastreabilidade. Informações e materiais destinados aos estudantes poderão ser disponibilizados tanto por e-mail institucional quanto por ambientes virtuais de aprendizagem da instituição, como plataformas de apoio às disciplinas.
+
+Quando existirem canais de comunicação da turma, previamente estabelecidos e autorizados pelos docentes, eles poderão ser usados para lembretes pontuais sobre datas de sessões e orientações logísticas, sempre mantendo a clareza sobre a natureza voluntária da participação.
+
+A frequência das comunicações aumenta em momentos-chave, como divulgação inicial do experimento, confirmação de datas de Sessão 0 e das sessões de tarefas e eventual alteração de cronograma. Fora desses momentos, as comunicações serão mais espaçadas, evitando sobrecarga de mensagens.
+
+---
+
+## 19.3 Pontos de comunicação obrigatórios
+
+Alguns eventos demandam comunicação formal específica.
+
+A aprovação do plano de experimento pelo orientador deve ser registrada, bem como a aprovação ou anuência de coordenação e docentes quanto ao uso de infraestrutura e cronograma. Quando houver submissão a comitê de ética, o parecer favorável também constitui marco formal.
+
+Antes do início do recrutamento, é necessário comunicar aos estudantes elegíveis o resumo do experimento, a forma de manifestação de interesse e as condições de participação. Mudanças relevantes no protocolo ou no cronograma, que afetem datas de sessões, duração prevista ou uso de IA, devem ser comunicadas aos participantes, docentes e coordenação, de modo a preservar transparência.
+
+Ao final da coleta, uma comunicação de encerramento será realizada, agradecendo formalmente a participação dos estudantes e, se pertinente, informando que resultados agregados poderão ser compartilhados posteriormente em apresentações de TCC ou eventos internos.
+
+---
+
+# 20. Critérios de prontidão para execução (Definition of Ready)
+
+## 20.1 Checklist de prontidão
+
+Para que o experimento seja considerado pronto para execução da coleta principal, alguns itens precisam estar concluídos e verificados.
+
+O plano de experimento deve estar consolidado, revisado e aprovado pelo orientador, com versão claramente identificada. O sistema sob teste precisa estar funcional, com defeitos semeados validados e scripts de execução de testes e cobertura operando corretamente em um ambiente de referência.
+
+Os instrumentos de coleta devem estar finalizados e publicados em ambiente estável, incluindo questionários de caracterização, entendimento e percepção, bem como templates de casos de teste e planilhas para consolidação das métricas.
+
+Os materiais de apoio, como guias do participante, roteiros do experimentador e slides para a Sessão 0, precisam estar concluídos e alinhados com o plano. Quando exigido, aprovações institucionais e éticas devem ter sido obtidas formalmente.
+
+O estudo piloto deve ter sido realizado, com registro de eventuais dificuldades encontradas e aplicação dos ajustes necessários ao protocolo. Por fim, o cronograma detalhado das sessões, com confirmação de datas, horários, locais e recursos, deve estar definido, e os canais de comunicação com os participantes, preparados para envio de convites e lembretes.
+
+Somente com todos esses elementos em ordem o experimento será considerado em condição adequada para iniciar a coleta de dados.
+
+---
+
+## 20.2 Aprovações finais para iniciar a operação
+
+Após a verificação do checklist de prontidão, a autorização final para o início da operação será dada por meio de aprovações formais.
+
+O orientador do TCC, Danilo de Quadros Maia Filho, deve confirmar que o plano está maduro, que o estudo piloto foi adequadamente conduzido e que os ajustes necessários foram incorporados. Docentes das disciplinas envolvidas precisam confirmar que as datas e horários das sessões são compatíveis com o planejamento das aulas e avaliações. A coordenação do curso, quando envolvida, deve atestar que o uso de laboratório e demais recursos está de acordo com as normas da unidade.
+
+Quando houver tramitação em comitê de ética, a aprovação desse comitê é condição indispensável para a realização de qualquer coleta com estudantes. A confirmação dessas aprovações poderá ser feita por e-mail ou registros equivalentes.
+
+Com esses elementos, o experimento atinge a definição de pronto para execução, encerrando o ciclo de planejamento e abrindo o ciclo de operação, em coerência com todo o plano metodológico descrito nas seções anteriores.
 

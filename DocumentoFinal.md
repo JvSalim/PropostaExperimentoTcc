@@ -645,3 +645,267 @@ Cada participante participará de duas sessões de experimento, que podem ocorre
 O número exato de participantes será definido de acordo com a disponibilidade, mas o planejamento considera um mínimo desejável de 24 estudantes, distribuídos de forma aproximadamente uniforme entre as sequências possíveis. Esse número permite que a análise estatística obtenha estimativas razoáveis de médias e variâncias, e que comparações entre as condições com e sem IA sejam realizadas com um mínimo de robustez.
 
 Em síntese, o desenho experimental busca um equilíbrio entre rigor metodológico e viabilidade prática em contexto de TCC, aproveitando medidas repetidas para aumentar a sensibilidade às diferenças entre condições, utilizando randomização para minimizar viés, e aplicando balanceamento e contrabalanço para reduzir efeitos de ordem e efeitos específicos de tarefa.
+## 10. População, sujeitos e amostragem
+
+### 10.1 População-alvo
+
+A população-alvo que este experimento busca representar é composta por estudantes de graduação em Engenharia de Software (e cursos diretamente relacionados à Computação) inseridos em instituições de ensino superior com perfil semelhante ao da PUC Minas. O foco são estudantes em períodos intermediários ou avançados, que já têm experiência básica com programação e contato inicial com testes de software, e que executam atividades práticas de desenvolvimento orientadas por user stories em disciplinas de laboratório, projetos integradores ou trabalhos práticos.
+
+Em termos de generalização, os resultados pretendem ser transferíveis, principalmente, para:
+
+1. Estudantes de Engenharia de Software, Sistemas de Informação, Ciência da Computação e áreas afins que realizam tarefas de leitura de user stories, derivação de casos de teste e implementação de testes automatizados em sistemas de pequeno e médio porte.
+2. Contextos acadêmicos em que esses estudantes desempenham um papel análogo ao de desenvolvedores ou testadores júnior, com responsabilidades de entendimento de requisitos, escrita de testes e uso crescente de ferramentas de inteligência artificial como apoio.
+
+Embora a coleta ocorra em um contexto específico (PUC Minas), a definição conceitual da população-alvo permite que o experimento dialogue com outras instituições que apresentam estrutura de curso, perfil de estudante e práticas pedagógicas semelhantes.
+
+---
+
+### 10.2 Critérios de inclusão de sujeitos
+
+Para que o experimento produza resultados coerentes com seu objetivo e continue exequível no contexto de um TCC, são estabelecidos critérios claros de inclusão. Poderão participar estudantes que:
+
+1. Estejam regularmente matriculados no curso de Engenharia de Software da PUC Minas (ou, eventualmente, em cursos correlatos de Computação, caso seja acordado com a coordenação e o orientador).
+2. Estejam posicionados entre o terceiro e o sétimo período do curso, o que garante que já tenham cursado pelo menos uma disciplina de programação básica e, idealmente, alguma disciplina que introduza testes de software, ainda que de forma inicial.
+3. Possuam capacidade de compreender textos técnicos em português, ler user stories e manipular projetos simples em um ambiente de desenvolvimento como Visual Studio Code.
+4. Tenham disponibilidade para participar de duas sessões experimentais, conforme descrito no desenho experimental (uma tarefa com uso de IA e outra tarefa sem uso de IA).
+5. Aceitem participar de forma voluntária, registrando ciência em termo de consentimento que descreve objetivos, procedimentos, riscos mínimos, confidencialidade e direito de desistência.
+
+Esses critérios asseguram que os participantes tenham condições mínimas para realizar as tarefas previstas, sem exigir um nível de especialização que inviabilize o recrutamento no contexto da graduação.
+
+---
+
+### 10.3 Critérios de exclusão de sujeitos
+
+Alguns sujeitos, mesmo pertencendo ao público-alvo em sentido amplo, podem introduzir viés ou encontrar dificuldades que comprometam a execução do experimento. Assim, serão excluídos:
+
+1. Estudantes diretamente envolvidos no planejamento e implementação do experimento, do sistema sob teste ou dos instrumentos de coleta (por exemplo, colegas que ajudaram a semear defeitos, montar o repositório ou definir questionários), para evitar conflito de interesse e conhecimento prévio excessivo das tarefas.
+2. Estudantes com experiência profissional muito avançada em testes automatizados ou uso intensivo de IA em desenvolvimento, quando essa experiência destoar fortemente do perfil médio da turma e puder distorcer a amostra, transformando-os em outliers sistemáticos.
+3. Estudantes que, por agenda, saúde, questões técnicas ou outras limitações, não tenham condições de comparecer às duas sessões previstas ou de utilizar o ambiente de desenvolvimento e as ferramentas mínimas (editor, framework de teste, ferramenta de IA na condição correspondente).
+4. Estudantes que não estejam autorizados, por políticas institucionais ou pessoais, a utilizar ferramentas de IA no contexto de atividades acadêmicas, quando isso inviabilizar sua participação na condição “com IA”.
+5. Estudantes muito iniciantes que ainda não cursaram disciplinas básicas de programação e claramente não conseguiriam compreender o código do sistema sob teste, ainda que simplificado.
+
+Esses critérios de exclusão reforçam a validade interna do estudo e preservam a ética, ao mesmo tempo em que mantêm o experimento viável para o pesquisador.
+
+---
+
+### 10.4 Tamanho da amostra planejado
+
+O tamanho da amostra precisa equilibrar três aspectos: poder estatístico mínimo, recursos disponíveis e tempo de execução compatível com um TCC. Considerando isso, o plano prevê:
+
+1. Um tamanho total desejável entre aproximadamente vinte e quarenta estudantes (por exemplo, entre 24 e 40 participantes), dependendo da adesão obtida no recrutamento.
+2. Cada participante executa duas condições (uma tarefa com IA e outra tarefa sem IA), o que caracteriza um desenho com medidas repetidas. Assim, mesmo um número moderado de participantes aumenta a capacidade de detectar diferenças entre condições, pois cada estudante serve parcialmente como seu próprio controle.
+3. As observações não são organizadas em grupos fixos independentes, mas sim em conjuntos de observações por condição: haverá um conjunto de medidas para a condição “Sem IA” e outro para a condição “Com IA”, ambos alimentados pelos mesmos sujeitos em momentos distintos.
+4. O planejamento de análise (t-teste pareado ou testes não paramétricos equivalentes) é adequado para amostras nessa ordem de grandeza, permitindo investigar diferenças de magnitude moderada em métricas como entendimento (M1), cobertura (M4, M5), taxa de detecção de defeitos (M8), tempo (M9) e esforço percebido (M12).
+
+Assim, o tamanho de amostra pensado é factível para um experimento conduzido por um único estudante de TCC e suficiente para produzir resultados analisáveis.
+
+---
+
+### 10.5 Método de seleção e recrutamento
+
+O recrutamento dos sujeitos seguirá uma estratégia de amostragem por conveniência com convite aberto, que é comum em estudos empíricos conduzidos no contexto de disciplinas de graduação. O procedimento geral será:
+
+1. Selecionar, em conjunto com docentes e coordenação, uma ou mais turmas de disciplinas práticas de programação, engenharia de requisitos, qualidade ou testes de software, nas quais haja estudantes que se encaixem nos critérios de inclusão.
+2. Apresentar o experimento em sala (presencial ou virtual) de forma breve e clara, explicando objetivo, natureza acadêmica do estudo, atividades previstas, duração estimada das sessões e benefícios esperados para a aprendizagem.
+3. Disponibilizar um formulário eletrônico de manifestação de interesse e caracterização básica, onde o estudante informa seus dados de contato, período, experiência prévia com programação, testes e IA, além de horários preferenciais.
+4. Aplicar os critérios de inclusão e exclusão descritos anteriormente. Se o número de interessados elegíveis ultrapassar a capacidade de execução (por exemplo, mais de quarenta candidatos), utilizar uma seleção que priorize diversidade de períodos e de experiência, podendo recorrer a sorteio simples para completar a amostra de forma justa.
+5. Uma vez selecionados, agendar as sessões, comunicando os participantes com antecedência, e esclarecer que a participação é voluntária, não vinculada diretamente à nota, podendo eventualmente ser reconhecida como atividade complementar, desde que isso seja acordado com a coordenação e não introduza pressão indevida.
+
+Esse processo é simples o bastante para ser executado por um único pesquisador, ao mesmo tempo em que garante transparência e alinhamento com a realidade das turmas.
+
+---
+
+### 10.6 Treinamento e preparação dos sujeitos
+
+Antes das tarefas experimentais, será realizada uma preparação breve e padronizada dos participantes, com o objetivo de reduzir desigualdades básicas de entendimento e evitar que o experimento meça somente quem já domina conceitos avançados de testes ou IA. Esse treinamento é compatível com o que já está descrito no desenho experimental e pode ser realizado em uma única sessão curta (Sessão 0).
+
+Nessa sessão, o pesquisador retomará os conceitos essenciais: o que é uma user story, quais são seus elementos típicos e a importância dos critérios de aceitação como ponte entre requisitos e testes; o que se entende por casos de teste em linguagem natural e por testes automatizados de unidade ou integração em um projeto simples. Em seguida, apresentará o sistema sob teste de maneira pragmática, descrevendo o domínio funcional, a organização dos arquivos e o comando a ser utilizado para executar os testes e gerar relatórios de cobertura.
+
+Os participantes receberão um pequeno guia escrito com instruções resumidas sobre abertura do projeto no editor de código, execução dos testes, preenchimento do template de casos de teste e regras sobre quando a IA pode ou não ser utilizada. Essa preparação é suficiente para nivelar o entendimento mínimo necessário, sem transformar o experimento em uma disciplina adicional, e mantém o protocolo exequível para o pesquisador dentro do cronograma de TCC.
+
+---
+
+## 11. Instrumentação e protocolo operacional
+
+### 11.1 Instrumentos de coleta de dados
+
+A instrumentação do experimento foi planejada para alinhar claramente cada instrumento às métricas definidas (M1 a M16) e às variáveis apresentadas nas seções anteriores. A ideia é que todo dado importante seja coletado com o mínimo de atrito para o participante e com esforço de consolidação compatível com o tempo de um TCC.
+
+A tabela a seguir resume os principais instrumentos de coleta e sua relação com as métricas:
+
+| Instrumento / Artefato                          | Papel no experimento                                                                                      | Principais métricas associadas      |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| Questionário de caracterização inicial          | Coletar dados de perfil, experiência prévia em programação, testes e uso de IA                            | Variáveis de controle (experiência) |
+| Questionário de entendimento da user story      | Medir compreensão objetiva da user story e dos critérios de aceitação                                     | M1                                  |
+| Template de casos de teste em linguagem natural | Registrar os casos de teste definidos pelos participantes a partir da user story                          | M2, M3                              |
+| Código de testes automatizados produzidos       | Base principal para cálculo de cobertura, detecção de defeitos e produtividade em testes                  | M4, M5, M6, M7, M8, M10, M11        |
+| Sistema sob teste com defeitos semeados         | Fornecer o ambiente controlado para execução dos testes e avaliação da detecção de defeitos               | Base conceitual para M7, M8         |
+| Ferramenta de cobertura de código               | Gerar relatórios de cobertura por linha e por ramo em cada condição                                       | M4, M5                              |
+| Registro de tempo (cronômetro, script ou log)   | Registrar horário de início e término de cada tarefa                                                      | M9                                  |
+| Questionário pós-tarefa                         | Levantar percepção de esforço, confiança, utilidade e dependência em relação à IA após cada tarefa        | M12, M13, M15, M16                  |
+| Registro estruturado de uso da IA               | Medir a frequência de interações relevantes com a ferramenta de IA na condição em que seu uso é permitido | M14                                 |
+| Planilha de consolidação de dados               | Reunir, em um único local, todas as métricas M1–M16 por participante e por condição                       | Consolidação de todas as métricas   |
+
+Esses instrumentos são tecnicamente simples (questionários online, planilhas, scripts de cobertura já integrados ao framework de teste) e podem ser facilmente operados por um único pesquisador.
+
+---
+
+### 11.2 Materiais de apoio e instruções
+
+Além dos instrumentos de coleta, o experimento contará com materiais de apoio que visam tornar o protocolo repetível e reduzir dúvidas operacionais, tanto para os participantes quanto para o pesquisador. Serão preparados, por exemplo:
+
+1. Um roteiro detalhado do experimentador, com o texto básico a ser utilizado na abertura das sessões, na apresentação do estudo, nos lembretes sobre uso adequado da IA e nas explicações sobre preenchimento dos questionários e templates. Esse roteiro ajuda a evitar variações indesejadas entre sessões.
+2. Um guia do participante, em formato breve, disponibilizado em PDF ou impresso, contendo instruções passo a passo sobre como abrir o projeto no editor de código, como executar os testes automatizados, como preencher o template de casos de teste em linguagem natural e quais são as regras de uso ou não uso da ferramenta de IA em cada tarefa.
+3. Uma pequena apresentação em slides para a Sessão 0, explicitando de maneira visual o papel das user stories, dos critérios de aceitação, dos testes automatizados e do experimento em si, reforçando que a IA é um fator a ser estudado e não uma obrigação.
+4. O termo de consentimento, que descreve objetivos, procedimentos, riscos mínimos, sigilo e direitos dos participantes, garantindo transparência ética.
+
+Esses materiais não apenas tornam a condução mais organizada, mas também reforçam a legitimidade do estudo como parte de um TCC sólido e bem planejado.
+
+---
+
+### 11.3 Procedimento experimental (protocolo operacional)
+
+O protocolo operacional organiza o experimento em uma sequência clara de etapas, desde o recrutamento até a consolidação dos dados. A estrutura é compatível com o desenho descrito nas seções 8 e 9, em que cada participante realiza duas tarefas (uma com IA e outra sem IA) em sessões separadas, com contrabalanço entre ordem e tarefa.
+
+Em termos narrativos, o procedimento ocorre da seguinte forma:
+
+1. O pesquisador, após finalizar a preparação do sistema sob teste, dos questionários, templates e scripts de cobertura, realiza o recrutamento de participantes nas turmas selecionadas, aplica os critérios de inclusão e exclusão e organiza os horários de sessão.
+2. Antes das tarefas principais, é realizada a Sessão 0, em que os participantes recebem explicações sobre o objetivo do estudo, os conceitos básicos necessários (user stories, critérios de aceitação, testes automatizados, papel da IA) e as instruções gerais. Nessa sessão, os participantes fornecem consentimento e, se ainda não o fizeram, preenchem o questionário de caracterização inicial.
+3. Na Sessão 1, cada participante inicia sua primeira tarefa, que pode ser com IA ou sem IA e com a Tarefa A ou B, dependendo da sequência à qual foi aleatoriamente alocado. O pesquisador registra o horário de início, entrega a user story e os critérios de aceitação correspondentes, e o participante define casos de teste em linguagem natural utilizando o template fornecido. Em seguida, o participante implementa os testes automatizados no projeto, executa os testes, gera relatórios de cobertura e, ao finalizar, informa o término da tarefa, registrando o tempo total. Ao final, preenche o questionário pós-tarefa, incluindo esforço percebido, confiança e, na condição com IA, utilidade e dependência. O uso da IA (número de interações relevantes) é registrado para compor a métrica M14.
+4. Na Sessão 2, o participante realiza a tarefa complementar, em condição espelho: se na primeira sessão trabalhou sem IA, agora trabalha com IA; se antes executou a Tarefa A, agora executa a Tarefa B, ou vice-versa. O protocolo é o mesmo: leitura da user story, definição de casos de teste, implementação de testes, execução, registro de tempo e preenchimento do questionário pós-tarefa.
+5. Após concluídas as sessões de todos os participantes, o pesquisador consolida os dados coletados: importa os resultados dos questionários, extrai relatórios de cobertura, contabiliza defeitos semeados detectados, centraliza métricas M1 a M16 em uma planilha única e verifica consistência básica dos registros. Essa planilha alimentará diretamente o plano de análise de dados.
+
+Esse fluxo é simples o suficiente para ser executado dentro do tempo de um semestre de TCC, especialmente se as sessões forem organizadas aproveitando horários de aula ou laboratórios previamente reservados.
+
+#### 11.3.1 Fluxograma da operacionalização do experimento
+
+Para sintetizar a visão operacional, o fluxograma abaixo apresenta o encadeamento das principais etapas, destacando instrumentos, variáveis, métricas e stakeholders envolvidos em cada fase.
+
+```text
+┌────────────────────────────────────────────────────────────────────────┐
+│                     Planejamento e Preparação                         │
+│ - Definição de objetivos, hipóteses e métricas (M1–M16)               │
+│ - Preparação do sistema sob teste com defeitos semeados               │
+│ - Criação de questionários, templates, scripts de cobertura           │
+│ Stakeholders: pesquisador, orientador                                 │
+└───────────────────────────┬────────────────────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                 Recrutamento e Seleção de Participantes               │
+│ - Convite a estudantes elegíveis                                      │
+│ - Aplicação de critérios de inclusão/exclusão                         │
+│ - Alocação aleatória nas sequências (S1, S2, S3, S4)                  │
+│ Stakeholders: estudantes, docentes, coordenação                        │
+└───────────────────────────┬────────────────────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                 Sessão 0 – Treinamento e Consentimento                │
+│ - Explicação do experimento e termo de consentimento                  │
+│ - Nivelamento sobre user stories, testes automatizados e IA           │
+│ - Demonstração do sistema sob teste                                   │
+│ Instrumentos: slides, guia do participante, termo de consentimento    │
+└───────────────────────────┬────────────────────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                   Sessão 1 – Tarefa 1 (Com ou Sem IA)                 │
+│ - Registro de início (tempo M9)                                       │
+│ - Entrega da user story (Tarefa A ou B)                               │
+│ - Preenchimento de casos de teste em linguagem natural                │
+│   (M2, M3; entendimento apoiado por M1)                               │
+│ - Implementação de testes automatizados                               │
+│   (M4, M5, M6, M7, M8, M10, M11)                                      │
+│ - Execução de testes e coleta de cobertura                            │
+│ - Registro de término (M9)                                            │
+│ - Questionário pós-tarefa (M12, M13, M15, M16)                        │
+│ - Registro de uso da IA (M14) se for condição com IA                  │
+└───────────────────────────┬────────────────────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                  Sessão 2 – Tarefa 2 (Condição Espelho)               │
+│ - Repetição do fluxo de Sessão 1                                      │
+│ - Troca de condição (Sem IA ↔ Com IA) e de tarefa (A ↔ B)             │
+│ - Coleta das mesmas métricas M1–M16                                   │
+└───────────────────────────┬────────────────────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                     Consolidação e Checagem de Dados                  │
+│ - Consolidação de M1–M16 em planilha                                  │
+│ - Verificação de consistência e dados faltantes                       │
+│ Stakeholders: pesquisador, orientador                                 │
+└───────────────────────────┬────────────────────────────────────────────┘
+                            │
+                            ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                      Análise, Interpretação e Relato                  │
+│ - Aplicação dos métodos estatísticos e qualitativos planejados        │
+│ - Resposta às questões Q1.1–Q4.3                                      │
+│ - Elaboração das seções de resultados, discussão e conclusões do TCC  │
+│ Stakeholders: pesquisador, orientador, banca, comunidade acadêmica    │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+Esse fluxograma reforça que o experimento está operacionalmente bem definido, com vínculos claros entre etapas, métricas e atores envolvidos.
+
+---
+
+### 11.4 Plano de piloto
+
+Antes da execução completa, será conduzido um estudo piloto em escala reduzida, com um pequeno grupo de estudantes que tenham perfil semelhante ao da amostra principal. Esse piloto tem papel crucial para ajustar o desenho à realidade e manter o experimento executável dentro do contexto do TCC.
+
+O piloto utilizará o mesmo sistema sob teste, os mesmos instrumentos e uma versão compacta do protocolo (Sessão 0, Sessão 1 e Sessão 2), aplicada a três a cinco participantes. O objetivo principal é verificar se o tempo estimado para cada tarefa é adequado, se as instruções são claras, se a complexidade da user story e dos defeitos semeados é compatível com o tempo de sessão e se os instrumentos (questionários, scripts de cobertura, registros de tempo, uso de IA) funcionam sem falhas.
+
+Com base nas observações do piloto, poderão ser realizados ajustes pontuais, por exemplo: simplificar ligeiramente a user story ou reduzir o número de critérios de aceitação, aumentar ou reduzir o tempo disponível para cada tarefa, esclarecer trechos do guia do participante que tenham gerado dúvidas, ou corrigir problemas técnicos de execução de testes e geração de cobertura. Todos os ajustes serão documentados, mantendo a transparência metodológica e garantindo que a versão final do protocolo seja realista para o conjunto de participantes do estudo principal.
+
+---
+
+## 12. Plano de análise de dados (pré-execução)
+
+### 12.1 Estratégia geral de análise
+
+O plano de análise de dados foi definido de forma antecipada para alinhar diretamente as métricas (M1 a M16) às questões de pesquisa (Q1.1 a Q4.3) e aos objetivos específicos (O1 a O4). A estratégia combina análise quantitativa (dados numéricos) e análise qualitativa (comentários e respostas abertas), buscando não apenas verificar diferenças estatísticas, mas também entender como os participantes perceberam o uso de IA nas tarefas de entendimento de user stories e geração de testes.
+
+A primeira etapa consiste em uma análise descritiva das métricas, separando os resultados por condição (“Com IA” e “Sem IA”). Serão calculadas medidas como média, mediana, desvio padrão, valores mínimos e máximos para métricas como M1 (entendimento), M4 e M5 (cobertura de código), M7 e M8 (defeitos detectados e taxa de detecção), M9 (tempo de tarefa), M10 e M11 (número de testes e produtividade), bem como M12, M13, M15 e M16 (percepções de esforço, confiança, dependência e utilidade). Isso fornecerá uma visão inicial do comportamento dos dados.
+
+Em seguida, serão realizadas comparações entre as condições para cada métrica central, respeitando o desenho com medidas repetidas. Por exemplo, será comparado, para cada participante, o valor de M1 na tarefa sem IA com o valor de M1 na tarefa com IA; o mesmo será feito para M4, M5, M8, M9 e demais métricas de interesse. Com isso, pretende-se responder diretamente se o uso de IA está associado a aumento de entendimento, maior cobertura, melhor detecção de defeitos ou redução de tempo e esforço.
+
+Finalmente, os resultados quantitativos serão interpretados à luz de informações qualitativas oriundas dos questionários pós-tarefa (por exemplo, comentários sobre como a IA ajudou ou atrapalhou) e das observações feitas durante o piloto e as sessões principais, buscando uma compreensão mais rica do fenômeno estudado.
+
+---
+
+### 12.2 Métodos estatísticos planejados
+
+Os métodos estatísticos foram escolhidos considerando o tamanho de amostra esperado, o desenho com medidas repetidas e a natureza das métricas. Para cada métrica numérica relevante (como M1, M4, M5, M8, M9, M10, M11), será avaliada a distribuição das diferenças entre condições (valor na condição “Com IA” menos valor na condição “Sem IA”) por meio de testes de normalidade e inspeção gráfica.
+
+Quando a distribuição dessas diferenças se mostrar razoavelmente próxima da normalidade, o método principal para comparação entre “Com IA” e “Sem IA” será o teste t pareado, que é adequado a dados emparelhados. Quando a normalidade não for atendida, serão utilizados testes não paramétricos equivalentes, como o teste de Wilcoxon para amostras pareadas, que não exigem pressupostos tão fortes sobre a forma da distribuição.
+
+Para explorar a influência simultânea do fator uso de IA e da tarefa (A ou B), poderá ser utilizada, quando viável, uma análise de variância com medidas repetidas, em que o uso de IA é tratado como fator intra-sujeitos e a tarefa como fator adicional ou bloqueio. Caso o tamanho da amostra ou os pressupostos limitem esse tipo de análise, serão realizadas análises estratificadas por tarefa e inspeções gráficas das interações, mantendo a coerência com o nível de complexidade esperado em um TCC.
+
+Além das comparações entre condições, podem ser investigadas correlações entre certas variáveis, como o uso efetivo da IA (M14) e o ganho em cobertura (M4, M5) ou taxa de detecção de defeitos (M8), usando coeficientes de correlação adequados (por exemplo, Spearman) quando os dados não forem estritamente normais ou envolverem escalas ordinais. Em todas as análises, além do p-valor, serão calculadas medidas de tamanho de efeito (como Cohen’s d para comparações pareadas ou estatísticas derivadas de testes não paramétricos), de forma a discutir não apenas se há diferença, mas também qual é a magnitude prática dessa diferença no contexto do experimento.
+
+---
+
+### 12.3 Tratamento de dados faltantes e outliers
+
+O tratamento de dados faltantes e valores extremos será definido previamente para evitar decisões ad hoc após a observação dos resultados. No caso de participantes que não completarem uma das duas tarefas previstas (por exemplo, apenas a tarefa com IA ou apenas a tarefa sem IA), seus dados poderão ser utilizados em análises descritivas, mas não serão incluídos nas comparações pareadas que exigem medidas em ambas as condições para o mesmo sujeito.
+
+Quando métricas específicas estiverem ausentes (como um questionário pós-tarefa não preenchido ou um relatório de cobertura não gerado), não serão realizadas imputações complexas; em vez disso, será adotada análise por caso disponível, deixando claro, para cada teste estatístico, quantas observações foram utilizadas.
+
+Para identificação de outliers, serão examinadas distribuições de métricas como tempo (M9), número de testes (M10) e cobertura (M4, M5), por meio de gráficos (boxplots, histogramas) e critérios simples, como valores muito além do intervalo interquartil. Quando um valor extremo puder ser claramente atribuído a erro de registro (por exemplo, tempo igual a zero por esquecimento de registrar o início), será corrigido se houver informação confiável ou excluído daquela análise específica. Quando o valor extremo for plausível (por exemplo, um participante demorou muito mais por dificuldades reais), não será removido automaticamente; nesse caso, podem ser feitas análises de sensibilidade, com e sem o outlier, e qualquer influência importante será discutida na seção de ameaças à validade do TCC.
+
+---
+
+### 12.4 Plano de análise para dados qualitativos
+
+Os dados qualitativos coletados por meio de respostas abertas nos questionários pós-tarefa e de comentários espontâneos durante o piloto e as sessões principais servirão para complementar a análise estatística e explicar padrões observados nas métricas numéricas.
+
+Primeiro, todas as respostas abertas serão reunidas em um único documento ou planilha, com os dados devidamente anonimizados. Em seguida, será feita uma leitura exploratória, identificando temas recorrentes, como percepções de que a IA ajudou a lembrar casos de borda, sensações de dependência excessiva, relatos de confusão gerada por sugestões incorretas da IA ou de ganho de segurança na definição de testes. Esses trechos serão marcados com códigos curtos (por exemplo, “ganho de cobertura percebido”, “dependência”, “IA confusa”) em um processo de codificação inicial.
+
+Na etapa seguinte, esses códigos serão agrupados em categorias mais amplas, como benefícios percebidos, riscos percebidos, estratégias de uso da IA e percepções sobre aprendizado. A partir dessas categorias, será realizada uma análise temática simples, buscando relacionar os temas qualitativos com os resultados quantitativos. Por exemplo, pode-se observar se participantes que relatam alta dependência da IA também apresentam valores elevados em M15 (dependência percebida) e se isso se reflete ou não em melhorias reais em cobertura (M4, M5) ou taxa de defeitos detectados (M8).
+
+Por fim, na redação dos resultados e da discussão do TCC, serão utilizadas citações representativas (anonimizadas) para ilustrar e enriquecer a interpretação dos achados estatísticos, mostrando como os estudantes, na prática, vivenciaram o uso de IA nas tarefas de entendimento de user stories e geração de testes automatizados. Dessa forma, o plano de análise qualitativa reforça o caráter empírico do trabalho e aprofunda a compreensão sobre o fenômeno em estudo, mantendo-se plenamente exequível dentro do escopo de um TCC.
+
